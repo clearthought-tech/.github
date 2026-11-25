@@ -1,0 +1,55 @@
+name: Delivery work item
+description: Board-ready work — short human outcome, acceptance criteria, agent brief
+title: ""
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use simple human English. Deep plans stay in Desktop `context/…/planning` — link them from Agent requirements.
+        Set **Product** and **Priority** on the project board after creating the issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Short human-readable context — what this is and why it matters.
+      placeholder: |
+        Testers still see X when they do Y. We want Z so playtests are honest.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable checklist for done. Prefer testable bullets.
+      value: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: agent_requirements
+    attributes:
+      label: Agent requirements
+      description: What an agent must know or respect (repos, constraints, links to plans/research, do-not-touch).
+      placeholder: |
+        - Repo: clearthought-tech/openworld-app
+        - Plan: ~/Desktop/context/openworld-app/planning/….md
+        - Do not change X / keep Y behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommended_changes
+    attributes:
+      label: Recommended changes
+      description: Starting points — files, approaches, or order of work. Not a mandatory diff.
+      placeholder: |
+        - Touch A.swift / B.yml
+        - Prefer approach Q over R because …
+    validations:
+      required: true
